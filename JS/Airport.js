@@ -29,7 +29,8 @@ class Airport {
   }
 
   getPassengerPlaneWithMaxPassengersCapacity() {
-    return Math.max(...this.getPassengerPlanes().map(plane => plane.passengersCapacity));
+    const maxPassengersCapacity = Math.max(...this.getPassengerPlanes().map(passengerPlane => passengerPlane.passengersCapacity));
+    return this.getPassengerPlanes().find(passengerPlane => passengerPlane.passengersCapacity === maxPassengersCapacity)
   }
 
   getTransportMilitaryPlanes() {
